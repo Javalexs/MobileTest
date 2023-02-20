@@ -11,22 +11,24 @@ import javax.annotation.Nonnull;
 import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
+
     @SneakyThrows
+    @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
 
         // Set your access credentials
-        mutableCapabilities.setCapability("browserstack.user", "asdasdqwdffsfdwe_FJixVj");
-        mutableCapabilities.setCapability("browserstack.key", "Lstx5wXmrYFxG5o5G46S");
+        mutableCapabilities.setCapability("browserstack.user", "fadeevlesha_9BzJIf");
+        mutableCapabilities.setCapability("browserstack.key", "3EiyZgxpsFj5KN3TRWZy");
 
         // Set URL of the application under test
         mutableCapabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
 
         // Specify device and os_version for testing
-        mutableCapabilities.setCapability("device", "Google Pixel 6 Pro");
-        mutableCapabilities.setCapability("os_version", "12.0");
+        mutableCapabilities.setCapability("device", "Google Pixel 3");
+        mutableCapabilities.setCapability("os_version", "9.0");
 
         // Set other BrowserStack capabilities
         mutableCapabilities.setCapability("project", "First Java Project");
