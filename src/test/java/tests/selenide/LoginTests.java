@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 public class LoginTests extends TestBase {
     @Test
     void checkTextLogInToWikipedia() {
-        step("Жмем кнопку регистрации", () -> {
+        step("Жмем кнопку регистрации пользователя", () -> {
             $(byClassName("android.support.v7.widget.LinearLayoutCompat")).click();
         });
         step("Проверяем наличие текста ", () -> {
