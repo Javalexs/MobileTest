@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
-class TestBase {
+public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
