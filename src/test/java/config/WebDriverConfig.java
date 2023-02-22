@@ -25,13 +25,4 @@ public interface WebDriverConfig extends Config {
 
     @Key("platform.version")
     String getPlatformVersion();
-
-    @Key("project")
-    String projectName();
-
-    @Key("build")
-    String buildName();
-
-    @Key("name")
-    String testName();
 }
