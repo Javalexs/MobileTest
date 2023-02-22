@@ -14,10 +14,10 @@ public interface WebDriverConfig extends Config {
     @Key("browserstack.key")
     String getBrowserstackKey();
 
-    @Key("url")
+    @Key("Url")
     String getUrl();
 
-    @Key("app")
+    @Key("App")
     String getApp();
 
     @Key("device.name")
@@ -25,4 +25,13 @@ public interface WebDriverConfig extends Config {
 
     @Key("platform.version")
     String getPlatformVersion();
+
+    @Key("project")
+    String projectName();
+
+    @Key("build")
+    String buildName();
+
+    @Key("name")
+    String testName();
 }

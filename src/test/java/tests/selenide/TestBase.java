@@ -3,13 +3,13 @@ package tests.selenide;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
+import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
 
@@ -29,11 +29,10 @@ public class TestBase {
     void addAttachments() {
 //        String sessionId = sessionId().toString();
 //
-////        Attach.screenshotAs("Last screenshot");
 //        Attach.pageSource();
-//
+
         closeWebDriver();
-//
+
 //        Attach.addVideo(sessionId);
     }
 }

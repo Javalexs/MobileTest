@@ -8,10 +8,8 @@ import tests.selenide.TestBase;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static io.appium.java_client.AppiumBy.id;
 import static io.qameta.allure.Allure.step;
-import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 

@@ -8,7 +8,7 @@ repositories {
     mavenCentral()
 }
 
-def allureVersion = "2.19.0"
+def allureVersion = '2.21.0'
 
 allure {
     report {
@@ -33,9 +33,9 @@ dependencies {
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "com.github.javafaker:javafaker:1.0.2",
             "org.junit.jupiter:junit-jupiter:5.9.2",
-            'org.aeonbits.owner:owner:1.0.4',
             "org.slf4j:slf4j-simple:2.0.5",
-            'io.github.bonigarcia:webdrivermanager:5.3.2'
+            "org.aeonbits.owner:owner:1.0.12",
+            "io.github.bonigarcia:webdrivermanager:5.3.2"
     )
 }
 
@@ -54,6 +54,11 @@ tasks.withType(Test) {
         }
     }
 }
+task android(type: Test) {
+    useJUnitPlatform {
+        includeTags 'android'
+    }
+}
 
 task ios(type: Test) {
     useJUnitPlatform {
@@ -61,8 +66,3 @@ task ios(type: Test) {
     }
 }
 
-task android(type: Test) {
-    useJUnitPlatform {
-        includeTags 'android'
-    }
-}
