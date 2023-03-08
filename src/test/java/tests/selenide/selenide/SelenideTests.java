@@ -23,7 +23,7 @@ public class SelenideTests extends TestBase {
     @DisplayName("Проверка текста в окне регистрации пользователя на устройстве Android")
 
     void countryPageSearchTest() {
-        step("Skip onboarding pages", () -> back());
+
         step("Type search", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Argentina");
@@ -43,7 +43,7 @@ public class SelenideTests extends TestBase {
     @Owner("Alexsey Fadeev")
     @Test
     void onBoardingStepsTest() {
-        step("Skip onboarding pages", () -> back());
+
 
         step("Check that the text 'The Free Encyclopedia …in over 300 languages' is visible", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
