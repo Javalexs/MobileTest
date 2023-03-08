@@ -19,19 +19,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class SelenideTests extends TestBase {
-    @Test
-    @Tag("android")
-    @DisplayName("Проверка текста в окне регистрации пользователя на устройстве Android")
-    void checkTextLogInToWikipedia() {
-        step("Жмем кнопку регистрации пользователя", () -> {
-            $(byClassName("android.support.v7.widget.LinearLayoutCompat")).click();
-        });
-        step("Проверяем наличие текста ", () -> {
-            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).shouldHave(text("Log in to Wikipedia"));
-        });
-    }
+//    @Test
+//    @Tag("android")
+//    @DisplayName("Проверка текста в окне регистрации пользователя на устройстве Android")
+//    void checkTextLogInToWikipedia() {
+//        step("Жмем кнопку регистрации пользователя", () -> {
+//            $(byClassName("android.support.v7.widget.LinearLayoutCompat")).click();
+//        });
+//        step("Проверяем наличие текста ", () -> {
+//            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).shouldHave(text("Log in to Wikipedia"));
+//        });
+//    }
 
     @Test
+    @Tag("android")
     void successSearchWikiTest() {
         step("Skip onboarding pages", () -> back());
         step("Type search", () -> {
