@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.selenide.TestBase;
 
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.*;
@@ -30,6 +31,19 @@ public class SelenideTests extends TestBase {
         });
     }
 
+    @Test
+    void successSearchWikiTest() {
+        step("Skip onboarding pages", () -> back());
+        step("Type search", () -> {
+            $(id("org.wikipedia:id/search_container")).click();
+//            $(AppiumBy.accessibilityId("Search Wikipedia")).click();
+            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("JavaScript");
+        });
+        step("Verify content found", () -> {
+            $$(id("org.wikipedia.alpha:id/page_list_item_title"))
+                    .shouldHave(sizeGreaterThan(0));
+        });
+    }
     @Test
     @Tag("ios")
     @DisplayName("Проверка ввода электронной почты на устройстве iOS")
