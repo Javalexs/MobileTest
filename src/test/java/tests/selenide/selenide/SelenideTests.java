@@ -19,32 +19,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class SelenideTests extends TestBase {
-//    @Test
-//    @Tag("android")
-//    @DisplayName("Проверка текста в окне регистрации пользователя на устройстве Android")
-//    void checkTextLogInToWikipedia() {
-//        step("Жмем кнопку регистрации пользователя", () -> {
-//            $(byClassName("android.support.v7.widget.LinearLayoutCompat")).click();
-//        });
-//        step("Проверяем наличие текста ", () -> {
-//            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).shouldHave(text("Log in to Wikipedia"));
-//        });
-//    }
-
     @Test
     @Tag("android")
-    void successSearchWikiTest() {
-        step("Skip onboarding pages", () -> back());
-        step("Type search", () -> {
-            $(id("org.wikipedia:id/search_container")).click();
-//            $(AppiumBy.accessibilityId("Search Wikipedia")).click();
-            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("JavaScript");
+    @DisplayName("Проверка текста в окне регистрации пользователя на устройстве Android")
+    void checkTextLogInToWikipedia() {
+        step("Жмем кнопку регистрации пользователя", () -> {
+            $(byClassName("android.support.v7.widget.LinearLayoutCompat")).click();
         });
-        step("Verify content found", () -> {
-            $$(id("org.wikipedia.alpha:id/page_list_item_title"))
-                    .shouldHave(sizeGreaterThan(0));
+        step("Проверяем наличие текста ", () -> {
+            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).shouldHave(text("Log in to Wikipedia"));
         });
     }
+
+
     @Test
     @Tag("ios")
     @DisplayName("Проверка ввода электронной почты на устройстве iOS")
